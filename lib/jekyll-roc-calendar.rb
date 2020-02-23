@@ -21,10 +21,16 @@ module Jekyll
 
     def roc_calendar(date)
       if date
+        "民國#{roc_calendar_date_only date}"
+      end
+    end
+
+    def roc_calendar_date_only date
+      if date
         year = RocCalendarFilter.year_number date.year - 1911
         month = RocCalendarFilter.month_number date.month
         day = RocCalendarFilter.month_number date.day
-        "民國#{year}年#{month}月#{day}日"
+        "#{year}年#{month}月#{day}日"
       end
     end
   end
