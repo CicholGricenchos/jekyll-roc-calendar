@@ -15,8 +15,12 @@ module Jekyll
       else
         ten = DIGITS[ten] + '十'
       end
-      unit = DIGITS[unit]
-      ten + unit
+      if unit == 0
+        ten
+      else
+        unit = DIGITS[unit]
+        ten + unit
+      end
     end
 
     def roc_calendar(date)
